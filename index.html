@@ -2,60 +2,117 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="enot" content="50db1236" /> <!-- Код из текущей кассы, замените если новый -->
-    <title>Путевой Онлайн</title>
+    <meta name="enot" content="50db1236" /> <!-- Замените на актуальный код, если новый -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Путевой Онлайн - Создание путевых листов</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f5f5f5;
             color: #333;
-            text-align: center;
+            line-height: 1.6;
         }
         header {
-            background-color: #4CAF50;
+            background: linear-gradient(to right, #4CAF50, #2E7D32);
             color: white;
-            padding: 20px;
+            padding: 60px 20px;
+            text-align: center;
         }
-        h1 {
+        header h1 {
             margin: 0;
-            font-size: 36px;
+            font-size: 48px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        header p {
+            font-size: 20px;
+            margin: 10px 0;
         }
         .container {
-            max-width: 800px;
-            margin: 50px auto;
+            max-width: 1000px;
+            margin: 0 auto;
             padding: 20px;
+        }
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
             background-color: white;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
         }
-        p {
-            font-size: 18px;
-            line-height: 1.5;
+        .hero img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
-        a {
+        .hero a {
             display: inline-block;
             margin-top: 20px;
-            padding: 10px 20px;
+            padding: 12px 30px;
             background-color: #4CAF50;
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            font-size: 18px;
         }
-        a:hover {
+        .hero a:hover {
             background-color: #45a049;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+        }
+        .feature {
+            flex: 1;
+            min-width: 250px;
+            margin: 10px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Путевой Онлайн</h1>
+        <p>Создавайте путевые листы быстро и удобно через Telegram</p>
     </header>
     <div class="container">
-        <p>Добро пожаловать в Путевой Онлайн — сервис для быстрого создания электронных путевых листов через Telegram-бот.</p>
-        <p>Просто введите свои данные, и получите готовый документ мгновенно. Без лишних сложностей и доставки!</p>
-        <a href="https://t.me/putevoi_online_bot">Начать в Telegram</a>
+        <div class="hero">
+            <img src="https://images.unsplash.com/photo-1515257746-1da0e0e423f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Такси">
+            <p>Надёжный сервис для водителей такси и не только</p>
+            <a href="https://t.me/putevoi_online_bot">Начать в Telegram</a>
+        </div>
+        <div class="features">
+            <div class="feature">
+                <h2>Мгновенно</h2>
+                <p>Получите готовый путевой лист за пару минут.</p>
+            </div>
+            <div class="feature">
+                <h2>Просто</h2>
+                <p>Введите данные в Telegram и скачайте документ.</p>
+            </div>
+            <div class="feature">
+                <h2>Удобно</h2>
+                <p>Работает на любом устройстве без лишних приложений.</p>
+            </div>
+        </div>
     </div>
+    <footer>
+        <p>© 2025 Путевой Онлайн. Все права защищены.</p>
+    </footer>
 </body>
 </html>
