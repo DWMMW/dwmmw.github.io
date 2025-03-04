@@ -3,27 +3,26 @@ document.addEventListener("DOMContentLoaded", function() {
     let btn = document.querySelector(".btn");
     btn.addEventListener("mouseover", function() {
         btn.style.backgroundColor = "#ff5733";
+        btn.style.transform = "scale(1.05)";
     });
     btn.addEventListener("mouseout", function() {
         btn.style.backgroundColor = "#007bff";
+        btn.style.transform = "scale(1)";
     });
 
-    // Раскрытие новостей и советов
+    // Раскрытие элементов
     let items = document.querySelectorAll(".feature h3, .news-item h3, .tip h3");
     items.forEach(item => {
         item.addEventListener("click", function() {
             let p = this.nextElementSibling;
-            if (p.style.display === "block") {
-                p.style.display = "none";
-            } else {
-                p.style.display = "block";
-            }
+            p.style.display = p.style.display === "block" ? "none" : "block";
+            p.style.transition = "max-height 0.3s ease";
         });
     });
 
     // Анимация появления секций при скролле
     function revealSections() {
-        let sections = document.querySelectorAll(".section");
+        let sections = document.querySelectorAll(".hero, .features, .news, .tips, .testimonials");
         sections.forEach(section => {
             let sectionTop = section.getBoundingClientRect().top;
             let windowHeight = window.innerHeight;
@@ -34,19 +33,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     window.addEventListener("scroll", revealSections);
     revealSections(); // Проверка при загрузке
-});
 
-// Добавим анимацию в CSS
-let style = document.createElement('style');
-style.innerHTML = `
-    .section.animate {
-        opacity: 1;
-        transform: translateY(0);
-        transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .section {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-`;
-document.head.appendChild(style);
+    // Ленивая загрузка изображений
+    let images = document.querySelectorAll("img");
+    images.forEach(img => {
+        img.setAttribute("loading", "lazy");
+    });
+});
