@@ -19,6 +19,7 @@ header {
     border-radius: 10px;
     margin-bottom: 20px;
     position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 header .avatar {
     max-width: 250px;
