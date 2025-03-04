@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #fff9e6;
+    overflow-x: hidden;
 }
 .container {
     width: 100%;
@@ -14,19 +15,22 @@ body {
 header {
     background: linear-gradient(to right, #FFC107, #FFA000);
     color: white;
-    padding: 60px 20px 40px;
+    padding: 80px 20px 40px;
     border-radius: 10px;
     margin-bottom: 20px;
+    position: relative;
 }
 header .avatar {
-    max-width: 200px;
+    max-width: 250px;
     border-radius: 50%;
     margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 h1 {
     color: #333;
-    font-size: 36px;
+    font-size: 40px;
     margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 p {
     font-size: 18px;
@@ -36,33 +40,52 @@ p {
 .btn {
     display: inline-block;
     margin-top: 20px;
-    padding: 12px 30px;
+    padding: 14px 35px;
     background-color: #007bff;
     color: #fff;
     text-decoration: none;
     border-radius: 8px;
-    font-size: 18px;
-    transition: background-color 0.3s;
+    font-size: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .btn:hover {
     background-color: #ff5733;
+    transform: scale(1.05);
 }
-.hero, .features, .news, .tips {
+.hero, .features, .news, .tips, .testimonials {
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     padding: 30px;
     margin-bottom: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.hero:hover, .features:hover, .news:hover, .tips:hover, .testimonials:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 .hero img, .feature img, .news-item img {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
+    transition: opacity 0.3s;
 }
-.feature, .news-item, .tip {
-    margin: 20px 0;
-    padding: 15px;
+.hero img:hover, .feature img:hover, .news-item img:hover {
+    opacity: 0.8;
+}
+.feature-grid, .news-grid, .tips-grid, .testimonial-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.feature, .news-item, .tip, .testimonial {
+    flex: 1;
+    min-width: 280px;
+    margin: 15px 0;
     text-align: left;
+    padding: 15px;
 }
 .feature h3, .news-item h3, .tip h3 {
     color: #FFC107;
@@ -74,15 +97,33 @@ p {
 .feature h3:hover, .news-item h3:hover, .tip h3:hover {
     color: #ff5733;
 }
+.testimonial {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+}
+.testimonial p {
+    font-style: italic;
+    color: #666;
+}
+.testimonial cite {
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+}
 footer {
     background-color: #FFB300;
     color: white;
-    padding: 15px;
+    padding: 20px;
     margin-top: 20px;
     border-radius: 5px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 @media (max-width: 768px) {
     .container { width: 90%; }
-    .features, .news { flex-direction: column; }
-    .feature, .news-item { min-width: 100%; }
+    .feature-grid, .news-grid, .tips-grid, .testimonial-grid { flex-direction: column; }
+    .feature, .news-item, .tip, .testimonial { min-width: 100%; }
+    header .avatar { max-width: 150px; }
+    h1 { font-size: 32px; }
 }
