@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /enot_50db1236.html  # Скрываем верификационный файл от поисковиков
+Allow: /
+Sitemap: https://onlineputevoi.ru/sitemap.xml
